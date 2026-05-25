@@ -5,31 +5,37 @@ st.set_page_config(page_title="MAN Bank", page_icon="🏦", layout="centered")
 CURRENCY = "CHF"
 
 # Phase 1: fixed read-only balances for all three girls.
-# Later, this can be connected to Google Sheets so it syncs automatically.
+# Updated for:
+# - Nelia spent CHF 9.90 from Spend for a baby gift.
+# - Aria lent CHF 9.00 to Nelia for a Nike bottle.
+# - Nelia owes Aria CHF 10.00 next month: CHF 9 repayment + CHF 1 interest.
 GIRLS = [
     {
         "Name": "Marita",
-        "Date": "1 May",
+        "Date": "After latest update",
         "Spend": 15.00,
         "Save": 0.00,
         "Invest": 1595.77,
         "Lesson": "When I invest more, I have less to spend today, but more choices in the future.",
+        "Note": "",
     },
     {
         "Name": "Aria",
-        "Date": "1 May",
-        "Spend": 16.00,
+        "Date": "After latest update",
+        "Spend": 7.00,
         "Save": 0.00,
         "Invest": 1433.01,
-        "Lesson": "Saving and investing means I am building something for later.",
+        "Lesson": "Lending money means someone owes me money back later.",
+        "Note": "Aria lent CHF 9.00 to Nelia. Nelia should repay CHF 10.00 next month.",
     },
     {
         "Name": "Nelia",
-        "Date": "1 May",
-        "Spend": 10.00,
+        "Date": "After latest update",
+        "Spend": 0.10,
         "Save": 0.00,
         "Invest": 942.46,
-        "Lesson": "Some money is for now, and some money is for later.",
+        "Lesson": "If I borrow money, I must pay it back later.",
+        "Note": "Nelia spent CHF 9.90 on a baby gift and borrowed CHF 9.00 from Aria. She owes Aria CHF 10.00 next month.",
     },
 ]
 
@@ -115,6 +121,9 @@ c1, c2, c3 = st.columns(3)
 c1.metric("Spend", money(girl["Spend"]))
 c2.metric("Save", money(girl["Save"]))
 c3.metric("Invest", money(girl["Invest"]))
+
+if girl["Note"]:
+    st.warning(girl["Note"])
 
 st.divider()
 
