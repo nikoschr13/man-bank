@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0B2D55">
+    <title>MAN Academy Daddy Bank</title>
+    <meta name="description" content="The MAN Academy money dashboard for Marita, Aria and Nelia.">
+    <link rel="icon" href="assets/man-academy-logo.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <img src="assets/man-academy-logo.png" alt="MAN Academy crest">
+        <div>
+          <p class="eyebrow">MAN ACADEMY</p>
+          <h1>Daddy Bank</h1>
+          <p>Money skills for today. Freedom for tomorrow.</p>
+        </div>
+      </header>
+
+      <p class="status">● Official balances through 1 May 2026</p>
+      <nav id="tabs" aria-label="Choose a dashboard"></nav>
+
+      <section id="dashboard" class="dashboard">
+        <div class="welcome">
+          <div>
+            <p class="eyebrow" id="age"></p>
+            <h2 id="hello"></h2>
+            <p id="note"></p>
+          </div>
+          <div class="interest">
+            <small>1% monthly reward</small>
+            <strong id="interest"></strong>
+          </div>
+        </div>
+
+        <div class="balances">
+          <article><span>◒</span><small>Spend</small><strong id="spend"></strong><em>Money you can use</em></article>
+          <article><span>◇</span><small>Save</small><strong id="save"></strong><em>For your next goal</em></article>
+          <article><span>↗</span><small>Bank / Invest</small><strong id="bank"></strong><em>Growing until age 18</em></article>
+        </div>
+
+        <article class="allowance">
+          <div class="allowance-title">
+            <div><p class="eyebrow">EVERY MONTH</p><h3>Your allowance</h3></div>
+            <strong id="allowance"></strong>
+          </div>
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="split">
+            <span>Spend <b id="spendPart"></b></span>
+            <span>Save <b id="savePart"></b></span>
+            <span>Invest <b id="investPart"></b></span>
+          </div>
+        </article>
+
+        <aside><b>★ Money lesson:</b> Interest is money your money earns. The more you invest, the more your monthly reward can grow.</aside>
+      </section>
+
+      <footer>MAN Academy · Financial Education · Parent-managed family ledger · CHF</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
